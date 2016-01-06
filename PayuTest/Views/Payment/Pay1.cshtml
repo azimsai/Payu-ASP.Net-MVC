@@ -1,0 +1,22 @@
+﻿@model List<MvcHtmlString>
+@{
+    Layout = null;
+}
+
+
+@* Loop through each control and render it *@
+<form id="PostForm" name="PostForm" action="https://test.payu.in/_payment" method="POST">
+
+    @foreach (var item in Model)
+    {
+        <div>
+            @* each string will rendered directly because its MvcHtmlString *@
+            @item
+        </div>
+    }
+</form>
+
+<script language='javascript'>
+    var vPostForm = document.PostForm;
+    vPostForm.submit();
+</script>
